@@ -1,0 +1,27 @@
+{
+  "name": "Mongo Transporter",
+  "description": "Sync data between two MongoDB deployments.",
+  "keywords": [
+    "MongoDB",
+    "Compose",
+    "transporter"
+  ],
+  "website": "https://compose.io/",
+  "repository": "https://github.com/kylmclaren/mongo-transporter",
+  "logo": "https://github.com/kylemclaren/mongo-transporter/blob/master/logo.png",
+  "env": {
+    "BUILDPACK_URL": "https://github.com/kr/heroku-buildpack-go",
+    "SOURCE_MONGO_URL": {
+      "description": "The full connection string of the MongoDB deployment you want to sync from."
+    },
+    "SOURCE_NS": {
+      "description": "The name of the database to sync from."
+    },
+    "DESTINATION_MONGO_URL": {
+      "description": "The full connection string of the MongoDB deployment you want to sync to."
+    },
+    "DEST_NS": {
+      "description": "The name of the database to sync to."
+    }
+  }
+}
