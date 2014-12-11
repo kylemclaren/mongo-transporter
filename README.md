@@ -33,6 +33,7 @@ This app uses the Go Buildpack for Heroku by @kr: https://github.com/kr/heroku-b
 ## To Do
 
 1. GoDep
+2. 2.4/2.6 caveats
 
 ## License
 
