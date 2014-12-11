@@ -8,7 +8,7 @@
   ],
   "website": "https://compose.io/",
   "repository": "https://github.com/kylmclaren/mongo-transporter",
-  "logo": "https://github.com/kylemclaren/mongo-transporter/blob/master/logo.png",
+  "logo": "https://raw.githubusercontent.com/kylemclaren/mongo-transporter/master/logo.png",
   "env": {
     "BUILDPACK_URL": "https://github.com/kr/heroku-buildpack-go",
     "SOURCE_MONGO_URL": {
