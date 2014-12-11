@@ -21,7 +21,7 @@ var (
 	destUri       = flag.String("d", $DESTINATION_MONGO_URL, "destination mongo uri to write documents to")
 	sourceNS      = flag.String($SOURCE_NS, "", "the source namespace to copy")
 	destinationNS = flag.String($DEST_NS, "", "the destination namespace")
-	tail          = flag.Bool("o", false, "tail the oplog")
+	tail          = flag.Bool("o", true, "tail the oplog")
 	debug         = flag.Bool("v", false, "debug, dumps all the documents to stdout")
 )
 
