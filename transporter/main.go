@@ -19,8 +19,8 @@ import (
 var (
 	sourceUri     = flag.String("s", $SOURCE_MONGO_URL, "source mongo uri to connect to")
 	destUri       = flag.String("d", $DESTINATION_MONGO_URL, "destination mongo uri to write documents to")
-	sourceNS      = flag.String($SOURCE_NS, "", "the source namespace to copy")
-	destinationNS = flag.String($DEST_NS, "", "the destination namespace")
+	sourceNS      = flag.String("source-ns", $SOURCE_NS, "the source namespace to copy")
+	destinationNS = flag.String("dest-ns", $DEST_NS, "the destination namespace")
 	tail          = flag.Bool("o", true, "tail the oplog")
 	debug         = flag.Bool("v", false, "debug, dumps all the documents to stdout")
 )
@@ -38,7 +38,7 @@ func main() {
 		source.Add(transporter.NewNode("out", "file", map[string]interface{}{"uri": "stdout://"}))
 	}
 
-	pipeline, err := transporter.NewPipeline(source, events.LogEmitter(), 1*time.Second)
+	pipeline, err := transporter.NewPipeline(source, events.NewLogEmitter(), 1*time.Second)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
