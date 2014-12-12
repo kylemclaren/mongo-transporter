@@ -20,8 +20,8 @@ var (
 	destUri string       = os.Getenv("DESTINATION_MONGO_URL")
 	sourceNS string      = os.Getenv("SOURCE_NS")
 	destinationNS string = os.Getenv("DEST_NS")
-	tail bool            = true
-	debug boo            = true
+	tail	             = true
+	debug       	     = true
 )
 
 func init() {
