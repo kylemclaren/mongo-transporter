@@ -7,7 +7,6 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 	"os"
 	"time"
@@ -17,12 +16,12 @@ import (
 )
 
 var (
-	sourceUri     := os.Getenv("SOURCE_MONGO_URL")
-	destUri       := os.Getenv("DESTINATION_MONGO_URL")
-	sourceNS      := os.Getenv("SOURCE_NS")
-	destinationNS := os.Getenv("DEST_NS")
-	tail          = true
-	debug         = true
+	sourceUri string     = os.Getenv("SOURCE_MONGO_URL")
+	destUri string       = os.Getenv("DESTINATION_MONGO_URL")
+	sourceNS string      = os.Getenv("SOURCE_NS")
+	destinationNS string = os.Getenv("DEST_NS")
+	tail bool            = true
+	debug boo            = true
 )
 
 func init() {
