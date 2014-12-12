@@ -17,12 +17,12 @@ import (
 )
 
 var (
-	sourceUri     = flag.String("s", $SOURCE_MONGO_URL, "source mongo uri to connect to")
-	destUri       = flag.String("d", $DESTINATION_MONGO_URL, "destination mongo uri to write documents to")
-	sourceNS      = flag.String("source-ns", $SOURCE_NS, "the source namespace to copy")
-	destinationNS = flag.String("dest-ns", $DEST_NS, "the destination namespace")
-	tail          = flag.Bool("o", true, "tail the oplog")
-	debug         = flag.Bool("v", false, "debug, dumps all the documents to stdout")
+	sourceUri     := os.Getenv("SOURCE_MONGO_URL")
+	destUri       := os.Getenv("DESTINATION_MONGO_URL")
+	sourceNS      := os.Getenv("SOURCE_NS")
+	destinationNS := os.Getenv("DEST_NS")
+	tail          = true
+	debug         = true
 )
 
 func init() {
