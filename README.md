@@ -1,6 +1,6 @@
 ![Mongo Transporter](mongo_transporter.png)
 
-A dead simple Go app that leverages the [Compose Transporter](https://github.com/compose/transporter) to transfer data between two MongoDB deployments and keep them in sync.
+A dead simple Go app that uses the [Compose Transporter](https://github.com/compose/transporter) to transfer data between two MongoDB deployments and keep them in sync.
 
 ## What it does
 
