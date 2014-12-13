@@ -1,0 +1,75 @@
+{
+	"ImportPath": "mongo-transporter/transporter",
+	"GoVersion": "go1.3.3",
+	"Deps": [
+		{
+			"ImportPath": "code.google.com/p/goprotobuf/proto",
+			"Comment": "go.r60-163",
+			"Rev": "9352842ae63ee1d7e74e074ce7bb10370c4b6b9e"
+		},
+		{
+			"ImportPath": "github.com/araddon/gou",
+			"Rev": "381a3eebd3a360ce569ab00c7a9e5079816c7cd8"
+		},
+		{
+			"ImportPath": "github.com/bitly/go-hostpool",
+			"Rev": "8c2964dbe369e4f05a0b1775d12a94cb858646b8"
+		},
+		{
+			"ImportPath": "github.com/compose/mejson",
+			"Rev": "dcd25cbabcad94e8aaed6981a11e13b3b70e2d46"
+		},
+		{
+			"ImportPath": "github.com/compose/transporter/pkg/adaptor",
+			"Comment": "0.0.1",
+			"Rev": "851d808ba7a36d63f616acddc528438dd10d20b5"
+		},
+		{
+			"ImportPath": "github.com/compose/transporter/pkg/events",
+			"Comment": "0.0.1",
+			"Rev": "851d808ba7a36d63f616acddc528438dd10d20b5"
+		},
+		{
+			"ImportPath": "github.com/compose/transporter/pkg/message",
+			"Comment": "0.0.1",
+			"Rev": "851d808ba7a36d63f616acddc528438dd10d20b5"
+		},
+		{
+			"ImportPath": "github.com/compose/transporter/pkg/pipe",
+			"Comment": "0.0.1",
+			"Rev": "851d808ba7a36d63f616acddc528438dd10d20b5"
+		},
+		{
+			"ImportPath": "github.com/compose/transporter/pkg/transporter",
+			"Comment": "0.0.1",
+			"Rev": "851d808ba7a36d63f616acddc528438dd10d20b5"
+		},
+		{
+			"ImportPath": "github.com/dancannon/gorethink",
+			"Comment": "v0.5.x-9-g16b174b",
+			"Rev": "16b174b489ff37d396a9fa202536c08171717883"
+		},
+		{
+			"ImportPath": "github.com/influxdb/influxdb/client",
+			"Comment": "v0.8.6-199-g8fb8e72",
+			"Rev": "8fb8e72c33b89d05bb974e270cd1da526c81b446"
+		},
+		{
+			"ImportPath": "github.com/mattbaird/elastigo/lib",
+			"Comment": "v1.0-124-gbefc136",
+			"Rev": "befc13630c41597cf52c77fdf9ad558773b3f405"
+		},
+		{
+			"ImportPath": "github.com/robertkrimen/otto",
+			"Rev": "dea31a3d392779af358ec41f77a07fcc7e9d04ba"
+		},
+		{
+			"ImportPath": "gopkg.in/fatih/pool.v2",
+			"Rev": "46cfd0bbfb747fd0c3333d221ba4e3c932cfd6dd"
+		},
+		{
+			"ImportPath": "gopkg.in/mgo.v2",
+			"Rev": "e2e914857713db7497cca2bd7fc0b030fc9cb22d"
+		}
+	]
+}
