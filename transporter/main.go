@@ -24,16 +24,12 @@ var (
 	debug       	     = true
 )
 
-func init() {
-	flag.Parse()
-}
-
 func main() {
 	source :=
-		transporter.NewNode("source", "mongo", map[string]interface{}{"uri": *sourceUri, "namespace": *sourceNS, "tail": *tail}).
-			Add(transporter.NewNode("out", "mongo", map[string]interface{}{"uri": *destUri, "namespace": *destinationNS}))
+		transporter.NewNode("source", "mongo", map[string]interface{}{"uri": fmt.Println(sourceUri), "namespace": fmt.Println(sourceNS), "tail": fmt.Println(tail)}).
+			Add(transporter.NewNode("out", "mongo", map[string]interface{}{"uri": fmt.Println(destUri), "namespace": fmt.Println(destinationNS)}))
 
-	if *debug {
+	if fmt.Println(debug) == true {
 		source.Add(transporter.NewNode("out", "file", map[string]interface{}{"uri": "stdout://"}))
 	}
 
