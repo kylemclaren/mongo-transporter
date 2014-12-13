@@ -13,7 +13,7 @@ A dead simple Go app that uses the [Compose Transporter](https://github.com/comp
 
 ## Deploy!
 
-Launch a new app and then add your environment variables in the Heroku dashboard. This will create a new Heroku worker.
+Launch a new app and then add your environment variables in the Heroku dashboard. This will create a new Heroku app. You will need to scale manually to one worker dyno via the dashboard or the command line `heroku ps:scale worker=1`.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kylemclaren/mongo-transporter)
 
