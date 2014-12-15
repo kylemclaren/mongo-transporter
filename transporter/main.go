@@ -6,6 +6,7 @@
 
 // users and indexes
 //Gofmt does not like.
+// Boolean vars
 
 package main
 
@@ -30,11 +31,30 @@ var (
 	debug			= os.Getenv("DEBUG") // will this work?
 )
 
+func main() {
+	source :=
+		transporter.NewNode("source", "mongo", map[string]interface{}{"uri": sourceUri, "namespace": sourceDB + "." + name, "tail": tail}).
+			Add(transporter.NewNode("out", "mongo", map[string]interface{}{"uri": destUri, "namespace": destinationDB + "." + name}))
+
+	if debug == true {
+		source.Add(transporter.NewNode("out", "file", map[string]interface{}{"uri": "stdout://"}))
+	}
+
+	pipeline, err := transporter.NewPipeline(source, events.NewLogEmitter(), 1*time.Second)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	pipeline.Run()
+}
+
 // Connect to source URI
 
 sess, err := mgo.Dial(sourceUri)
 	if err != nil {
 	  fmt.Println("Can't connect: " + err.Error())
+		os.Exit(1)
 	}
 
 // Get collection names from source DB
@@ -47,21 +67,5 @@ names, err := sess.DB(sourceDB).CollectionNames()
 // Iterate over collection names and run a pipeline for each
 
 for _, name := range names {
-	func main() {
-		source :=
-			transporter.NewNode("source", "mongo", map[string]interface{}{"uri": sourceUri, "namespace": sourceDB + "." + name, "tail": tail}).
-				Add(transporter.NewNode("out", "mongo", map[string]interface{}{"uri": destUri, "namespace": destinationDB + "." + name}))
 
-		if debug == true {
-			source.Add(transporter.NewNode("out", "file", map[string]interface{}{"uri": "stdout://"}))
-		}
-
-		pipeline, err := transporter.NewPipeline(source, events.NewLogEmitter(), 1*time.Second)
-		if err != nil {
-			fmt.Println(err)
-			os.Exit(1)
-		}
-
-		pipeline.Run()
-	}
 }
