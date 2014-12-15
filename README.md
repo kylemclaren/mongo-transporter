@@ -17,7 +17,7 @@ A dead simple Go app that uses the [Compose Transporter](https://github.com/comp
 
 ## Deploy!
 
-Launch a new app and then add your environment variables in the Heroku dashboard. This will create a new Heroku app. You will need to scale manually to one worker dyno via the dashboard or the command line `heroku ps:scale worker=1`
+Click the button below to deploy a new app instance, add your config/environment variables in the Heroku dashboard and click "Launch App". This will create a new Heroku app. You will need to scale manually to one worker dyno via the dashboard or the command line (worker dynos do not scale automatically when deploying): `heroku ps:scale worker=1`
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kylemclaren/mongo-transporter)
 
@@ -28,10 +28,11 @@ Launch a new app and then add your environment variables in the Heroku dashboard
 - `DESTINATION_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **to**. eg. `mongodb://username:strongpassword@candidate.44.mongolayer.com:30000/staging_db?authSource=local` This must be the Primary member of the replica set and can use any user with read\write access. THe user doesn not need to authenticate to the `local` DB.
 - `DEST_NS` - The DB name and collection to sync from. eg. `staging_db.myCollection`
 
-Note that the users for both the source and destination deployments must use a user with [oplog access](https://docs.compose.io/common-questions/getting-oplog-access.html).
+<!-- Note that the users for both the source and destination deployments must use a user with [oplog access](https://docs.compose.io/common-questions/getting-oplog-access.html). -->
 
 ## Thanks
 
+The engineers at [Compose](https:compose.io) for making an awesome tool, Transporter.
 This app uses the Go Buildpack for Heroku by @kr: https://github.com/kr/heroku-buildpack-go
 
 ## To Do
