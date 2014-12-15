@@ -17,9 +17,9 @@ A dead simple Go app that uses the [Compose Transporter](https://github.com/comp
 
 ## Deploy!
 
-Click the button below to deploy a new app instance, add your config/environment variables in the Heroku dashboard and click "Launch App". This will create a new Heroku app. You will need to scale manually to one worker dyno via the dashboard or the command line (worker dynos do not scale automatically when deploying): `heroku ps:scale worker=1`
-
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kylemclaren/mongo-transporter)
+
+Click the deploy button to launch a new app instance, add your config/environment variables in the Heroku dashboard and click "Launch App". This will create a new Heroku app. You will need to scale manually to one worker dyno via the dashboard or the command line (worker dynos do not scale automatically when deploying): `heroku ps:scale worker=1`
 
 ## Config vars
 
@@ -30,9 +30,18 @@ Click the button below to deploy a new app instance, add your config/environment
 
 <!-- Note that the users for both the source and destination deployments must use a user with [oplog access](https://docs.compose.io/common-questions/getting-oplog-access.html). -->
 
+## What is does
+
+## What it does not do (yet)
+
+- Copy DB users
+- Copy indexes
+
 ## Thanks
 
 The engineers at [Compose](https:compose.io) for making an awesome tool, Transporter.
+
+
 This app uses the Go Buildpack for Heroku by @kr: https://github.com/kr/heroku-buildpack-go
 
 ## To Do
