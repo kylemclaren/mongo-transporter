@@ -41,24 +41,22 @@ names, err := sess.DB(sourceDB).CollectionNames()
 		fmt.Println("Error: " + err.Error())
 	}
 
-	for _, name := range names {
- 		...
+for _, name := range names {
+	func main() {
+		source :=
+			transporter.NewNode("source", "mongo", map[string]interface{}{"uri": sourceUri, "namespace": sourceDB + "." + name, "tail": tail}).
+				Add(transporter.NewNode("out", "mongo", map[string]interface{}{"uri": destUri, "namespace": destinationDB + "." + name}))
+
+		if debug == true {
+			source.Add(transporter.NewNode("out", "file", map[string]interface{}{"uri": "stdout://"}))
+		}
+
+		pipeline, err := transporter.NewPipeline(source, events.NewLogEmitter(), 1*time.Second)
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+
+		pipeline.Run()
 	}
-
-func main() {
-	source :=
-		transporter.NewNode("source", "mongo", map[string]interface{}{"uri": sourceUri, "namespace": sourceDB + name, "tail": tail}).
-			Add(transporter.NewNode("out", "mongo", map[string]interface{}{"uri": destUri, "namespace": destinationDB + name}))
-
-	if debug == true {
-		source.Add(transporter.NewNode("out", "file", map[string]interface{}{"uri": "stdout://"}))
-	}
-
-	pipeline, err := transporter.NewPipeline(source, events.NewLogEmitter(), 1*time.Second)
-	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
-
-	pipeline.Run()
 }
