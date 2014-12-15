@@ -12,16 +12,26 @@
   "env": {
     "BUILDPACK_URL": "https://github.com/kr/heroku-buildpack-go",
     "SOURCE_MONGO_URL": {
-      "description": "The full connection string of the MongoDB deployment you want to sync from."
+      "description": "The full connection string of the MongoDB deployment you want to sync from.",
+      "value": "mongodb://"
     },
-    "SOURCE_NS": {
-      "description": "The DB name and collection to sync from. eg. prod_db.myCollection"
+    "SOURCE_DB": {
+      "description": "The DB name to sync from. eg. prod_db"
     },
     "DESTINATION_MONGO_URL": {
-      "description": "The full connection string of the MongoDB deployment you want to sync to."
+      "description": "The full connection string of the MongoDB deployment you want to sync to.",
+      "value": "mongodb://"
     },
-    "DEST_NS": {
-      "description": "The DB name and collection to sync from. eg. staging_db.myCollection"
+    "DEST_DB": {
+      "description": "The DB name sync to. eg. staging_db"
+    },
+    "TAIL": {
+      "description": "Specify true to enable oplog tailing or false for one-time sync.",
+      "value": "true"
+    },
+    "DEBUG": {
+      "description": "Specify true to enable verbose logging to stdout for debugging purposes.",
+      "value": "false"
     }
   }
 }
