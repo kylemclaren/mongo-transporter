@@ -2,6 +2,8 @@
 
 A dead simple Go app that uses the [Compose Transporter](https://github.com/compose/transporter) to transfer data between two MongoDB deployments and keep them in sync.
 
+<!--
+
 ## What it does
 
 - connect to both the source and the destination and finds the oplog timestamp
@@ -10,6 +12,8 @@ A dead simple Go app that uses the [Compose Transporter](https://github.com/comp
 - copies all the collections in parallel
 - copies non-unique indexes
 - tails the oplog from the initial timestamp, and applies the operations in a batch (ignoring a list of blacklisted - - commands, dropDatabase, etc). There is no conflict resolution with Transporter. When writing to the source and the destination, the last write always wins.
+
+-->
 
 ## Deploy!
 
