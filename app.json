@@ -15,13 +15,13 @@
       "description": "The full connection string of the MongoDB deployment you want to sync from."
     },
     "SOURCE_NS": {
-      "description": "The name of the database to sync from."
+      "description": "The DB name and collection to sync from. eg. prod_db.myCollection"
     },
     "DESTINATION_MONGO_URL": {
       "description": "The full connection string of the MongoDB deployment you want to sync to."
     },
     "DEST_NS": {
-      "description": "The name of the database to sync to."
+      "description": "The DB name and collection to sync from. eg. staging_db.myCollection"
     }
   }
 }
