@@ -4,6 +4,9 @@
 //
 // seed is a reimagining of the seed mongo to mongo tool
 
+// users and indexes
+//Gofmt does not like.
+
 package main
 
 import (
@@ -23,15 +26,15 @@ var (
 	destUri string				= os.Getenv("DESTINATION_MONGO_URL")
 	sourceDB string				= os.Getenv("SOURCE_DB")
 	destinationDB string	= os.Getenv("DEST_DB")
-	tail									= os.Getenv("TAIL")
-	debug									= os.Getenv("DEBUG")
+	tail									= os.Getenv("TAIL") // will this work?
+	debug									= os.Getenv("DEBUG") // will this work?
 )
 
 // Connect to source URI
 
 sess, err := mgo.Dial(sourceUri)
 	if err != nil {
-	  fmt.Println("Can't connect " + err.Error())
+	  fmt.Println("Can't connect: " + err.Error())
 	}
 
 // Get collection names from source DB
