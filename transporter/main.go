@@ -29,9 +29,9 @@ var (
 
 // Connect to source URI
 
-sess, err := mgo.Dial(sourceURI)
+sess, err := mgo.Dial(sourceUri)
 	if err != nil {
-	  fmt.Println("can't connect " + err.Error())
+	  fmt.Println("Can't connect " + err.Error())
 	}
 
 // Get collection names from source DB
