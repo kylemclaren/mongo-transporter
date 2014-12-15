@@ -11,23 +11,44 @@ import (
 	"os"
 	"time"
 
+	"gopkg.in/mgo.v2"
+  "gopkg.in/mgo.v2/bson"
+
 	"github.com/compose/transporter/pkg/events"
 	"github.com/compose/transporter/pkg/transporter"
 )
 
 var (
-	sourceUri string     = os.Getenv("SOURCE_MONGO_URL")
-	destUri string       = os.Getenv("DESTINATION_MONGO_URL")
-	sourceNS string      = os.Getenv("SOURCE_NS")
-	destinationNS string = os.Getenv("DEST_NS")
-	tail	             = true
-	debug       	     = true
+	sourceUri string			= os.Getenv("SOURCE_MONGO_URL")
+	destUri string				= os.Getenv("DESTINATION_MONGO_URL")
+	sourceDB string				= os.Getenv("SOURCE_DB")
+	destinationDB string	= os.Getenv("DEST_DB")
+	tail									= os.Getenv("TAIL")
+	debug									= os.Getenv("DEBUG")
 )
+
+// Connect to source URI
+
+sess, err := mgo.Dial(sourceURI)
+	if err != nil {
+	  fmt.Println("can't connect " + err.Error())
+	}
+
+// Get collection names from source DB
+
+names, err := sess.DB(sourceDB).CollectionNames()
+	if err != nil {
+		fmt.Println("Error: " + err.Error())
+	}
+
+	for _, name := range names {
+ 		...
+	}
 
 func main() {
 	source :=
-		transporter.NewNode("source", "mongo", map[string]interface{}{"uri": sourceUri, "namespace": sourceNS, "tail": tail}).
-			Add(transporter.NewNode("out", "mongo", map[string]interface{}{"uri": destUri, "namespace": destinationNS}))
+		transporter.NewNode("source", "mongo", map[string]interface{}{"uri": sourceUri, "namespace": sourceDB + name, "tail": tail}).
+			Add(transporter.NewNode("out", "mongo", map[string]interface{}{"uri": destUri, "namespace": destinationDB + name}))
 
 	if debug == true {
 		source.Add(transporter.NewNode("out", "file", map[string]interface{}{"uri": "stdout://"}))
