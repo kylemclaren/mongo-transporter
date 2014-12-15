@@ -34,6 +34,9 @@ Click the deploy button to launch a new app instance, add your config/environmen
 
 ## What it does not do (yet)
 
+- Copy DB users
+- Copy Indexes
+
 ## Thanks
 
 The engineers at [Compose](https:compose.io) for making an awesome tool, Transporter.
