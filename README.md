@@ -34,9 +34,6 @@ Click the deploy button to launch a new app instance, add your config/environmen
 
 ## What it does not do (yet)
 
-- Copy DB users
-- Copy indexes
-
 ## Thanks
 
 The engineers at [Compose](https:compose.io) for making an awesome tool, Transporter.
@@ -47,6 +44,7 @@ This app uses the Go Buildpack for Heroku by @kr: https://github.com/kr/heroku-b
 ## To Do
 
 1. 2.4/2.6 caveats
+2. Comma seperated list of collections to ignore
 
 ## License
 
