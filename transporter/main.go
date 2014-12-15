@@ -15,19 +15,19 @@ import (
 	"time"
 
 	"gopkg.in/mgo.v2"
-  "gopkg.in/mgo.v2/bson"
+  	"gopkg.in/mgo.v2/bson"
 
 	"github.com/compose/transporter/pkg/events"
 	"github.com/compose/transporter/pkg/transporter"
 )
 
 var (
-	sourceUri string			= os.Getenv("SOURCE_MONGO_URL")
-	destUri string				= os.Getenv("DESTINATION_MONGO_URL")
-	sourceDB string				= os.Getenv("SOURCE_DB")
+	sourceUri string	= os.Getenv("SOURCE_MONGO_URL")
+	destUri string		= os.Getenv("DESTINATION_MONGO_URL")
+	sourceDB string		= os.Getenv("SOURCE_DB")
 	destinationDB string	= os.Getenv("DEST_DB")
-	tail									= os.Getenv("TAIL") // will this work?
-	debug									= os.Getenv("DEBUG") // will this work?
+	tail			= os.Getenv("TAIL") // will this work?
+	debug			= os.Getenv("DEBUG") // will this work?
 )
 
 // Connect to source URI
