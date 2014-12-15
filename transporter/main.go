@@ -80,6 +80,10 @@ func main() {
 			os.Exit(1)
 		}
 
-		pipeline.Run()
+		go pipeline.Run()
 	}
+
+	c := make (chan bool)
+	<- c 
+
 }
