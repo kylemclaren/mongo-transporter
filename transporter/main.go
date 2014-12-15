@@ -1,10 +1,6 @@
 // Copyright 2014 The Transporter Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
-//
-// seed is a reimagining of the seed mongo to mongo tool
-
-// users and indexes
 
 package main
 
