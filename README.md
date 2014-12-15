@@ -2,6 +2,11 @@
 
 A dead simple Go app that uses the [Compose Transporter](https://github.com/compose/transporter) to transfer data between two MongoDB deployments and keep them in sync.
 
+## What's it good for?
+
+- Keeping dev, staging and production DB's in sync.
+- Zero-downtime migrations from one deployment to another.
+
 <!--
 
 ## What it does
