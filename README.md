@@ -13,16 +13,16 @@ A dead simple Go app that uses the [Compose Transporter](https://github.com/comp
 
 ## Deploy!
 
-Launch a new app and then add your environment variables in the Heroku dashboard. This will create a new Heroku app. You will need to scale manually to one worker dyno via the dashboard or the command line `heroku ps:scale worker=1`.
+Launch a new app and then add your environment variables in the Heroku dashboard. This will create a new Heroku app. You will need to scale manually to one worker dyno via the dashboard or the command line `heroku ps:scale worker=1`
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kylemclaren/mongo-transporter)
 
 ## Config vars
 
-- `SOURCE_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **from**. eg. `mongodb://username:strongpassword@candidate.44.mongolayer.com:10000/prod_db?authSource=local`
-- `SOURCE_NS` - ???
-- `DESTINATION_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **to**. eg. `mongodb://username:strongpassword@candidate.44.mongolayer.com:30000/staging_db?authSource=local`
-- `DEST_NS` - ???
+- `SOURCE_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **from**. eg. `mongodb://username:strongpassword@candidate.44.mongolayer.com:10000/local?authSource=prod_db` You will need to create a user that can read from the `oplog.rs` collection.
+- `SOURCE_NS` - The DB name and collection to sync from. eg. `prod_db.myCollection`
+- `DESTINATION_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **to**. eg. `mongodb://username:strongpassword@candidate.44.mongolayer.com:30000/staging_db?authSource=local` This must be the Primary member of the replica set and can use any user with read\write access. THe user doesn not need to authenticate to the `local` DB.
+- `DEST_NS` - The DB name and collection to sync from. eg. `staging_db.myCollection`
 
 Note that the users for both the source and destination deployments must use a user with [oplog access](https://docs.compose.io/common-questions/getting-oplog-access.html).
 
@@ -32,8 +32,7 @@ This app uses the Go Buildpack for Heroku by @kr: https://github.com/kr/heroku-b
 
 ## To Do
 
-1. GoDep
-2. 2.4/2.6 caveats
+1. 2.4/2.6 caveats
 
 ## License
 
