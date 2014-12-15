@@ -19,14 +19,14 @@ A dead simple Go app that uses the [Compose Transporter](https://github.com/comp
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kylemclaren/mongo-transporter)
 
-Click the deploy button to launch a new app instance, add your config/environment variables in the Heroku dashboard and click "Launch App". This will create a new Heroku app. You will need to scale manually to one worker dyno via the dashboard or the command line (worker dynos do not scale automatically when deploying): `heroku ps:scale worker=1`
+Click the deploy button to launch a new app instance, add your config/environment variables in the Heroku dashboard and click "Deploy for Free". This will create a new Heroku app. You will need to scale manually to one worker dyno via the dashboard or the command line (worker dynos do not scale automatically when deploying): `heroku ps:scale worker=1`
 
 ## Config vars
 
-- `SOURCE_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **from**. eg. `mongodb://username:strongpassword@candidate.44.mongolayer.com:10000/local?authSource=prod_db` You will need to create a user that can read from the `oplog.rs` collection.
-- `SOURCE_NS` - The DB name and collection to sync from. eg. `prod_db.myCollection`
-- `DESTINATION_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **to**. eg. `mongodb://username:strongpassword@candidate.44.mongolayer.com:30000/staging_db?authSource=local` This must be the Primary member of the replica set and can use any user with read\write access. The user does not need to authenticate to the `local` DB.
-- `DEST_NS` - The DB name and collection to sync from. eg. `staging_db.myCollection`
+- `SOURCE_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **from**. eg. `mongodb://username:strongpassword@candidate.44.mongolayer.com:10000/local?authSource=prod_db` You will need to create a user that can read from the `local.oplog.rs` namespace.
+- `SOURCE_NS` - The DB name to sync from. eg. `prod_db`
+- `DESTINATION_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **to**. eg. `mongodb://username:strongpassword@candidate.44.mongolayer.com:30000/staging_db` This must be the Primary member of the replica set and can use any user with read\write access. The user does not need to authenticate to the `local` DB.
+- `DEST_NS` - The DB name to sync from. eg. `staging_db`
 
 <!-- Note that the users for both the source and destination deployments must use a user with [oplog access](https://docs.compose.io/common-questions/getting-oplog-access.html). -->
 
