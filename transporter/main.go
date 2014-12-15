@@ -41,6 +41,8 @@ names, err := sess.DB(sourceDB).CollectionNames()
 		fmt.Println("Error: " + err.Error())
 	}
 
+// Iterate over collection names and run a pipeline for each
+
 for _, name := range names {
 	func main() {
 		source :=
