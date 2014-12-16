@@ -24,7 +24,7 @@ A dead simple Go app that uses the [Compose Transporter](https://github.com/comp
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kylemclaren/mongo-transporter)
 
-Click the deploy button to launch a new app instance, add your config/environment variables in the Heroku dashboard and click "Deploy for Free". This will create a new Heroku app. Worker dynos do not scale automatically when deploying so tou will need to scale manually to one worker dyno via the dashboard or the command line: `heroku ps:scale worker=1`
+Click the deploy button to launch a new app instance, add your config/environment variables in the Heroku dashboard and click "Deploy for Free". This will create a new Heroku app. Worker dynos do not scale automatically when deploying, you will need to scale manually to one worker dyno via the dashboard or the command line: `heroku ps:scale worker=1 -a 'YOUR APP NAME'`
 
 ## Config vars
 
