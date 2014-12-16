@@ -24,7 +24,7 @@ A dead simple Go app that uses the [Compose Transporter](https://github.com/comp
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kylemclaren/mongo-transporter)
 
-Click the deploy button to launch a new app instance, add your config/environment variables in the Heroku dashboard and click "Deploy for Free". This will create a new Heroku app. You will need to scale manually to one worker dyno via the dashboard or the command line (worker dynos do not scale automatically when deploying): `heroku ps:scale worker=1`
+Click the deploy button to launch a new app instance, add your config/environment variables in the Heroku dashboard and click "Deploy for Free". This will create a new Heroku app. Worker dynos do not scale automatically when deploying so tou will need to scale manually to one worker dyno via the dashboard or the command line: `heroku ps:scale worker=1`
 
 ## Config vars
 
@@ -39,17 +39,21 @@ Click the deploy button to launch a new app instance, add your config/environmen
 
 ## What is does
 
+- Connect to both the source and the destination and finds the oplog timestamp
+- Copies all the collections in parallel
+- Tails the oplog from the initial timestamp, and applies the operations in a batch (ignoring a list of blacklisted commands - dropDatabase, etc). There is no conflict resolution with Transporter. When writing to the source and the destination, the last write always wins.
+
 ## What it does not do (yet)
 
 - Copy DB users
-- Copy Indexes
+- Copy indexes
 
 ## Thanks
 
 The engineers at [Compose](https://compose.io) for making an awesome tool, Transporter.
 
 
-This app uses the Go Buildpack for Heroku by @kr: https://github.com/kr/heroku-buildpack-go
+This app uses the [Go Buildpack for Heroku](https://github.com/kr/heroku-buildpack-go) by @kr
 
 ## To Do
 
