@@ -30,8 +30,10 @@ Click the deploy button to launch a new app instance, add your config/environmen
 
 - `SOURCE_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **from**. eg. `mongodb://username:strongpassword@candidate.44.mongolayer.com:10000/local?authSource=prod_db` You will need to create a user that can read from the `local.oplog.rs` namespace. You can use the URI for either the primary or secondary node.
 - `SOURCE_DB` - The DB name to sync from. eg. `prod_db`
-- `DESTINATION_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **to**. eg. `mongodb://username:strongpassword@candidate.44.mongolayer.com:30000/staging_db` The user does not need to authenticate to the `local` DB. You can use the URI for either the primary or secondary node.
+- `DESTINATION_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **to**. eg. `mongodb://username:strongpassword@candidate.44.mongolayer.com:30000/staging_db` The user does not need to authenticate to the `local` DB but needs read write access to `DEST_DB`. You can use the URI for either the primary or secondary node.
 - `DEST_DB` - The DB name to sync from. eg. `staging_db`
+- `TAIL` - Specify true to runa continuos sync, tailing the oplog. False for a one-time sync.
+- `DEBUG` - Specify true for verbose logging to stdout.
 
 <!-- Note that the users for both the source and destination deployments must use a user with [oplog access](https://docs.compose.io/common-questions/getting-oplog-access.html). -->
 
