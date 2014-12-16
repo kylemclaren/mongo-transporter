@@ -44,7 +44,7 @@ Click the deploy button to launch a new app instance, add your config/environmen
 
 ## Thanks
 
-The engineers at [Compose](https:compose.io) for making an awesome tool, Transporter.
+The engineers at [Compose](https://compose.io) for making an awesome tool, Transporter.
 
 
 This app uses the Go Buildpack for Heroku by @kr: https://github.com/kr/heroku-buildpack-go
