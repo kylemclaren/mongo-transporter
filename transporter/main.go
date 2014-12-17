@@ -5,10 +5,7 @@
 package main
 
 import (
-	"bytes"
 	"fmt"
-	"net/http"
-	"net/url"
 	"os"
 	"strings"
 	"time"
@@ -29,7 +26,7 @@ var (
 	envTail              = os.Getenv("TAIL")
 	envDebug             = os.Getenv("DEBUG")
 	slackNotify          = os.Getenv("SLACK_NOTIFY")
-	webookUrl     string = os.Getenv("SLACK_WEBHOOK_URL")
+	webhookUrl    string = os.Getenv("SLACK_WEBHOOK_URL")
 	slackChannel  string = os.Getenv("SLACK_CHANNEL")
 	slackApp      string = os.Getenv("SLACK_APP_NAME")
 )
@@ -112,7 +109,7 @@ func main() {
 		}
 
 		go pipeline.Run()
-		
+
 	}
 
 	c := make(chan bool)
