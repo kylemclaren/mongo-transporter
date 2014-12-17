@@ -50,6 +50,10 @@
 			"Rev": "16b174b489ff37d396a9fa202536c08171717883"
 		},
 		{
+			"ImportPath": "github.com/franela/goreq",
+			"Rev": "34782208fca504724367694e7f27f166484a0021"
+		},
+		{
 			"ImportPath": "github.com/influxdb/influxdb/client",
 			"Comment": "v0.8.6-199-g8fb8e72",
 			"Rev": "8fb8e72c33b89d05bb974e270cd1da526c81b446"

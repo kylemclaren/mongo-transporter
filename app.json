@@ -37,7 +37,7 @@
       "description": "Specify true to receive progress notifications in Slack.",
       "value": "true"
     },
-    "SLACK_TOKEN": {
+    "SLACK_WEBHOOK_URL": {
       "description": ""
     },
     "SLACK_CHANNEL": {

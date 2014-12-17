@@ -15,6 +15,8 @@ import (
 
 	"gopkg.in/mgo.v2"
 
+	"github.com/franela/goreq"
+
 	"github.com/compose/transporter/pkg/events"
 	"github.com/compose/transporter/pkg/transporter"
 )
@@ -27,7 +29,7 @@ var (
 	envTail              = os.Getenv("TAIL")
 	envDebug             = os.Getenv("DEBUG")
 	slackNotify          = os.Getenv("SLACK_NOTIFY")
-	slackToken    string = os.Getenv("SLACK_TOKEN")
+	webookUrl     string = os.Getenv("SLACK_WEBHOOK_URL")
 	slackChannel  string = os.Getenv("SLACK_CHANNEL")
 	slackApp      string = os.Getenv("SLACK_APP_NAME")
 )
@@ -72,30 +74,24 @@ func main() {
 
 		fmt.Println("Copying from " + srcNamespace + " to " + destNamespace)
 
-		slackMessage := "Copying from " + srcNamespace + " to " + destNamespace
+		var slackMessage string = "Copying from " + srcNamespace + " to " + destNamespace
 
 		if slack == true {
 
-			apiUrl := "https://slack.com/api"
-			resource := "/chat.postMessage/"
-			data := url.Values{}
-			data.Set("token", slackToken)
-			data.Add("channel", slackChannel)
-			data.Add("username", slackApp)
-			data.Add("icon_url", "https://raw.githubusercontent.com/kylemclaren/mongo-transporter/notifications/slack_icon.png")
-			data.Add("text", slackMessage)
+			type notification struct {
+				channel  string
+				username string
+				icon_url string
+				text     string
+			}
 
-			u, _ := url.ParseRequestURI(apiUrl)
-			u.Path = resource
-			u.RawQuery = data.Encode()
-			urlStr := fmt.Sprintf("%v", u) // "https://api.com/user/?name=foo&surname=bar"
+			notification := Notification{channel: slackChannel, username: slackApp, icon_url: "https://raw.githubusercontent.com/kylemclaren/mongo-transporter/notifications/slack_icon.png", text: slackMessage}
 
-			client := &http.Client{}
-			r, _ := http.NewRequest("POST", urlStr, nil)
-			r.Header.Add("Content-Type", "application/x-www-form-urlencoded")
-			r.Header.Add("Content-Length", strconv.Itoa(len(data.Encode())))
-
-			resp, _ := client.Do(r)
+			res, err := goreq.Request{
+				Method: "POST",
+				Uri:    webhookUrl,
+				Body:   notification,
+			}.Do()
 
 		}
 
