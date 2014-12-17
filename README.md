@@ -60,6 +60,7 @@ This app uses the [Go Buildpack for Heroku](https://github.com/kr/heroku-buildpa
 1. 2.4/2.6 caveats
 2. Comma seperated list of collections to ignore
 3. Improve log output
+4. Slack notifications
 
 ## License
 
