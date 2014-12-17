@@ -5,7 +5,10 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
+	"net/http"
+	"net/url"
 	"os"
 	"strings"
 	"time"
@@ -23,6 +26,10 @@ var (
 	destinationDB string = os.Getenv("DEST_DB")
 	envTail              = os.Getenv("TAIL")
 	envDebug             = os.Getenv("DEBUG")
+	slackNotify          = os.Getenv("SLACK_NOTIFY")
+	slackToken    string = os.Getenv("SLACK_TOKEN")
+	slackChannel  string = os.Getenv("SLACK_CHANNEL")
+	slackApp      string = os.Getenv("SLACK_APP_NAME")
 )
 
 func main() {
@@ -30,10 +37,12 @@ func main() {
 	var (
 		tail  bool
 		debug bool
+		slack bool
 	)
 
 	tail = (strings.ToLower(envTail) == "true")
 	debug = (strings.ToLower(envDebug) == "true")
+	slack = (strings.ToLower(slackNotify) == "true")
 
 	// Connect to source URI
 
@@ -60,7 +69,35 @@ func main() {
 
 		srcNamespace := fmt.Sprintf("%s.%s", sourceDB, name)
 		destNamespace := fmt.Sprintf("%s.%s", destinationDB, name)
+
 		fmt.Println("Copying from " + srcNamespace + " to " + destNamespace)
+
+		slackMessage := "Copying from " + srcNamespace + " to " + destNamespace
+
+		if slack == true {
+
+			apiUrl := "https://slack.com/api"
+			resource := "/chat.postMessage/"
+			data := url.Values{}
+			data.Set("token", slackToken)
+			data.Add("channel", slackChannel)
+			data.Add("username", slackApp)
+			data.Add("icon_url", "")
+			data.Add("text", slackMessage)
+
+			u, _ := url.ParseRequestURI(apiUrl)
+			u.Path = resource
+			u.RawQuery = data.Encode()
+			urlStr := fmt.Sprintf("%v", u) // "https://api.com/user/?name=foo&surname=bar"
+
+			client := &http.Client{}
+			r, _ := http.NewRequest("POST", urlStr, nil)
+			r.Header.Add("Content-Type", "application/x-www-form-urlencoded")
+			r.Header.Add("Content-Length", strconv.Itoa(len(data.Encode())))
+
+			resp, _ := client.Do(r)
+
+		}
 
 		source :=
 			transporter.NewNode("source", "mongo", map[string]interface{}{"uri": sourceUri, "namespace": srcNamespace, "tail": tail}).
@@ -79,7 +116,7 @@ func main() {
 		go pipeline.Run()
 	}
 
-	c := make (chan bool)
-	<- c 
+	c := make(chan bool)
+	<-c
 
 }
