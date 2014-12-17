@@ -91,10 +91,12 @@ func main() {
 			}.Do()
 
 			if err != nil {
-				fmt.Println(err)
+				fmt.Println(err.Error())
 			}
 
-			fmt.Println("Posted to Slack " + res)
+			res.StatusCode
+
+			fmt.Println("Posted to Slack")
 
 		}
 
