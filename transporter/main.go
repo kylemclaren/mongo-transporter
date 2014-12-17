@@ -90,7 +90,11 @@ func main() {
 				Body:   notification,
 			}.Do()
 
-			fmt.Println("Posted to Slack")
+			if err != nil {
+				fmt.Println(err)
+			}
+
+			fmt.Println("Posted to Slack " + res)
 
 		}
 
