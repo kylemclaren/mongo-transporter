@@ -82,7 +82,7 @@ func main() {
 			data.Set("token", slackToken)
 			data.Add("channel", slackChannel)
 			data.Add("username", slackApp)
-			data.Add("icon_url", "")
+			data.Add("icon_url", "https://raw.githubusercontent.com/kylemclaren/mongo-transporter/notifications/slack_icon.png")
 			data.Add("text", slackMessage)
 
 			u, _ := url.ParseRequestURI(apiUrl)
