@@ -93,6 +93,8 @@ func main() {
 				Body:   notification,
 			}.Do()
 
+			fmt.Println("Posted to Slack")
+
 		}
 
 		source :=
@@ -105,11 +107,12 @@ func main() {
 
 		pipeline, err := transporter.NewPipeline(source, events.NewLogEmitter(), 1*time.Second)
 		if err != nil {
-			fmt.Println(err)
+			fmt.Println("Transporter error: " + err.Error())
 			os.Exit(1)
 		}
 
 		go pipeline.Run()
+		
 	}
 
 	c := make(chan bool)
