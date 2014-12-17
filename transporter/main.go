@@ -94,9 +94,8 @@ func main() {
 				fmt.Println(err.Error())
 			}
 
-			res.StatusCode
-
 			fmt.Println("Posted to Slack")
+			fmt.Println(res.StatusCode)
 
 		}
 
