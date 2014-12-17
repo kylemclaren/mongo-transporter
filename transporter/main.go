@@ -75,14 +75,14 @@ func main() {
 
 		if slack == true {
 
-			type notification struct {
+			type Notification struct {
 				channel  string
 				username string
 				icon_url string
 				text     string
 			}
 
-			notification = Notification{channel: slackChannel, username: slackApp, icon_url: "https://raw.githubusercontent.com/kylemclaren/mongo-transporter/notifications/slack_icon.png", text: slackMessage}
+			notification := Notification{channel: slackChannel, username: slackApp, icon_url: "https://raw.githubusercontent.com/kylemclaren/mongo-transporter/notifications/slack_icon.png", text: slackMessage}
 
 			res, err := goreq.Request{
 				Method: "POST",
