@@ -38,13 +38,16 @@
       "value": "true"
     },
     "SLACK_WEBHOOK_URL": {
-      "description": ""
+      "description": "",
+      "value": "https://hooks.slack.com/services/"
     },
     "SLACK_CHANNEL": {
-      "description": ""
+      "description": "",
+      "value": "-"
     },
     "SLACK_APP_NAME": {
-      "description": ""
+      "description": "",
+      "value": "-"
     }
   }
 }
