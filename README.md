@@ -35,6 +35,8 @@ Click the deploy button to launch a new app instance, add your config/environmen
 - `TAIL` - Specify true to run a continuous sync, tailing the oplog. False for a one-time sync.
 - `DEBUG` - Specify true for verbose logging to stdout.
 
+Run `$ heroku logs -a MY_APP_NAME` from the command line to check out the logs.
+
 <!-- Note that the users for both the source and destination deployments must use a user with [oplog access](https://docs.compose.io/common-questions/getting-oplog-access.html). -->
 
 ## What is does
@@ -48,6 +50,8 @@ Click the deploy button to launch a new app instance, add your config/environmen
 - Copy DB users
 - Copy indexes
 
+You will have to recreate any (non-unique) indexes and create new users on the destination DB, a small trade-off for the ease of use.
+
 ## Thanks
 
 The engineers at [Compose](https://compose.io) for making an awesome tool, Transporter.
@@ -58,7 +62,7 @@ This app uses the [Go Buildpack for Heroku](https://github.com/kr/heroku-buildpa
 ## To Do
 
 1. 2.4/2.6 caveats
-2. Comma seperated list of collections to ignore
+2. Comma separated list of collections to ignore
 3. Improve log output
 4. Slack notifications
 
