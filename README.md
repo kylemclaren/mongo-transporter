@@ -37,7 +37,7 @@ For now, Mongo Transporter will only sync a single DB on a deployment so if a de
 - `TAIL` - Specify true to run a continuous sync, tailing the oplog. False for a one-time sync.
 - `DEBUG` - Specify true for verbose logging to stdout.
 
-Run `$ heroku logs -a MY_APP_NAME` from the command line to check out the logs.
+Run `$ heroku logs -ta MY_APP_NAME` from the command line to check out the logs.
 
 <!-- Note that the users for both the source and destination deployments must use a user with [oplog access](https://docs.compose.io/common-questions/getting-oplog-access.html). -->
 
