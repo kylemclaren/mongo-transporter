@@ -32,8 +32,8 @@ For now, Mongo Transporter will only sync a single DB on a deployment so if a de
 
 - `SOURCE_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **from**. eg. `mongodb://username:strongpassword@candidate.33.mongolayer.com:30000,candidate.34.mongolayer.com:30000/local?authSource=prod_db` You will need to create a user that can read from the `local.oplog.rs` namespace. You can use both members if the deployment is a replica set.
 - `SOURCE_DB` - The DB name to sync from. eg. `prod_db`
-- `DESTINATION_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **to**. eg. `mongodb://username:strongpassword@candidate.43.mongolayer.com:30000,candidate.44.mongolayer.com:30000/staging_db` The user does not need to authenticate to the `local` DB but needs read write access to `DEST_DB`. You can use both members if the deployment is a replica set.
-- `DEST_DB` - The DB name to sync from. eg. `staging_db`
+- `SINK_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **to**. eg. `mongodb://username:strongpassword@candidate.43.mongolayer.com:30000,candidate.44.mongolayer.com:30000/staging_db` The user does not need to authenticate to the `local` DB but needs read write access to `DEST_DB`. You can use both members if the deployment is a replica set.
+- `SINK_DB` - The DB name to sync from. eg. `staging_db`
 - `TAIL` - Specify true to run a continuous sync, tailing the oplog. False for a one-time sync.
 - `DEBUG` - Specify true for verbose logging to stdout.
 
