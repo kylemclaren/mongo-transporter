@@ -17,12 +17,12 @@ import (
 )
 
 var (
-	sourceUri     string = os.Getenv("SOURCE_MONGO_URL")
-	destUri       string = os.Getenv("DESTINATION_MONGO_URL")
-	sourceDB      string = os.Getenv("SOURCE_DB")
-	destinationDB string = os.Getenv("DEST_DB")
-	envTail              = os.Getenv("TAIL")
-	envDebug             = os.Getenv("DEBUG")
+	sourceUri string = os.Getenv("SOURCE_MONGO_URL")
+	sinkUri   string = os.Getenv("SINK_MONGO_URL")
+	sourceDB  string = os.Getenv("SOURCE_DB")
+	sinkDB    string = os.Getenv("SINK_DB")
+	envTail          = os.Getenv("TAIL")
+	envDebug         = os.Getenv("DEBUG")
 )
 
 func main() {
@@ -59,12 +59,12 @@ func main() {
 		}
 
 		srcNamespace := fmt.Sprintf("%s.%s", sourceDB, name)
-		destNamespace := fmt.Sprintf("%s.%s", destinationDB, name)
-		fmt.Println("Copying from " + srcNamespace + " to " + destNamespace)
+		sinkNamespace := fmt.Sprintf("%s.%s", sinkDB, name)
+		fmt.Println("Copying from " + srcNamespace + " to " + sinkNamespace)
 
 		source :=
 			transporter.NewNode("source", "mongo", map[string]interface{}{"uri": sourceUri, "namespace": srcNamespace, "tail": tail}).
-				Add(transporter.NewNode("out", "mongo", map[string]interface{}{"uri": destUri, "namespace": destNamespace}))
+				Add(transporter.NewNode("out", "mongo", map[string]interface{}{"uri": sinkUri, "namespace": destNamespace}))
 
 		if debug == true {
 			source.Add(transporter.NewNode("out", "file", map[string]interface{}{"uri": "stdout://"}))
@@ -79,7 +79,7 @@ func main() {
 		go pipeline.Run()
 	}
 
-	c := make (chan bool)
-	<- c 
+	c := make(chan bool)
+	<-c
 
 }

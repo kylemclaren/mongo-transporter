@@ -18,11 +18,11 @@
     "SOURCE_DB": {
       "description": "The DB name to sync from. eg. prod_db"
     },
-    "DESTINATION_MONGO_URL": {
+    "SINK_MONGO_URL": {
       "description": "The full connection string of the MongoDB deployment you want to sync to.",
       "value": "mongodb://"
     },
-    "DEST_DB": {
+    "SINK_DB": {
       "description": "The DB name sync to. eg. staging_db"
     },
     "TAIL": {
