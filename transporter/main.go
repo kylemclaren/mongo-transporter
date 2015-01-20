@@ -64,7 +64,7 @@ func main() {
 
 		source :=
 			transporter.NewNode("source", "mongo", map[string]interface{}{"uri": sourceUri, "namespace": srcNamespace, "tail": tail}).
-				Add(transporter.NewNode("out", "mongo", map[string]interface{}{"uri": sinkUri, "namespace": destNamespace}))
+				Add(transporter.NewNode("out", "mongo", map[string]interface{}{"uri": sinkUri, "namespace": sinkNamespace}))
 
 		if debug == true {
 			source.Add(transporter.NewNode("out", "file", map[string]interface{}{"uri": "stdout://"}))
