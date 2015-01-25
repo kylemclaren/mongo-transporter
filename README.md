@@ -2,7 +2,7 @@
 
 [![wercker status](https://app.wercker.com/status/3eda307e1ccd93047fb764846c90bc9b/m/master "wercker status")](https://app.wercker.com/project/bykey/3eda307e1ccd93047fb764846c90bc9b)
 
-A dead simple Go app that uses the [Compose Transporter](https://github.com/compose/transporter) to transfer data between two MongoDB deployments and keep them in sync.
+A simple Go app that uses the [Compose Transporter](https://github.com/compose/transporter) to transfer data between two MongoDB deployments and keep them in sync.
 
 ## What's it good for?
 
@@ -65,7 +65,7 @@ This app uses the [Go Buildpack for Heroku](https://github.com/kr/heroku-buildpa
 
 ## To Do
 
-- [ ] 2.4/2.6 caveats
+- [ ] 2.4/2.6 caveats (if any)
 - [ ] Comma separated list of collections to ignore
 - [ ] Improve log output
 - [ ] Slack notifications
