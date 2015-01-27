@@ -4,14 +4,15 @@
   "keywords": [
     "MongoDB",
     "Compose",
-    "transporter"
+    "transporter",
+    "sync"
   ],
   "website": "https://compose.io/",
   "repository": "https://github.com/kylmclaren/mongo-transporter",
   "logo": "https://raw.githubusercontent.com/kylemclaren/mongo-transporter/master/logo.png",
   "env": {
     "BUILDPACK_URL": {
-      "description": "Do not modify this value",
+      "description": "Do not modify this value.",
       "value": "https://github.com/kr/heroku-buildpack-go"
     },
     "SOURCE_MONGO_URL": {
