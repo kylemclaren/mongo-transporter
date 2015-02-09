@@ -49,7 +49,7 @@ Run `$ heroku logs -ta MY_APP_NAME` from the command line to check out the logs.
 - Copies all the collections in parallel
 - Tails the oplog from the initial timestamp, and applies the operations in a batch (ignoring a list of blacklisted commands - dropDatabase, etc). There is no conflict resolution with Transporter. When writing to the source and the destination, the last write always wins.
 
-## What it does not do (yet)
+## What it does not do
 
 - Copy DB users
 - Copy indexes
