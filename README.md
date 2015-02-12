@@ -30,7 +30,7 @@ A simple Go app that uses the [Compose Transporter](https://github.com/compose/t
 
 Click the deploy button to launch a new app instance, add your config/environment variables in the Heroku dashboard and click "Deploy for Free". This will create a new Heroku app. Worker dynos do not scale automatically when deploying, you will need to scale manually to one worker dyno via the dashboard or the command line: `heroku ps:scale worker=1 -a 'YOUR APP NAME'`
 
-For now, Mongo Transporter will only sync a single DB on a deployment so if a deployment has multiple DB's, you will have to run multiple app instances. YOu can only use this with a MongoDB replica ste, this is because a replica set includes the `oplog.rs` collections on the `local` DB. Transporter "tails" this collection to keep the two deployments in sync.
+For now, Mongo Transporter will only sync a single DB on a deployment so if a deployment has multiple DB's, you will have to run multiple app instances. To run a "continuous sync", you will need to use this with a MongoDB replica set, this is because a replica set includes the `oplog.rs` collection on the `local` DB. Transporter "tails" this collection to keep the two deployments in sync.
 
 ## Config vars
 
