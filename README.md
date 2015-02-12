@@ -30,13 +30,13 @@ A simple Go app that uses the [Compose Transporter](https://github.com/compose/t
 
 Click the deploy button to launch a new app instance, add your config/environment variables in the Heroku dashboard and click "Deploy for Free". This will create a new Heroku app. Worker dynos do not scale automatically when deploying, you will need to scale manually to one worker dyno via the dashboard or the command line: `heroku ps:scale worker=1 -a 'YOUR APP NAME'`
 
-For now, Mongo Transporter will only sync a single DB on a deployment so if a deployment has multiple DB's, you will have to run multiple app instances.
+For now, Mongo Transporter will only sync a single DB on a deployment so if a deployment has multiple DB's, you will have to run multiple app instances. YOu can only use this with a MongoDB replica ste, this is because a replica set includes the `oplog.rs` collections on the `local` DB. Transporter "tails" this collection to keep the two deployments in sync.
 
 ## Config vars
 
-- `SOURCE_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **from**. eg. `mongodb://username:strongpassword@candidate.33.mongolayer.com:30000,candidate.34.mongolayer.com:30000/local?authSource=prod_db` You will need to [create a user](https://github.com/kylemclaren/mongo-transporter/wiki/Creating-a-MongoDB-oplog-user) that can read from the `local.oplog.rs` namespace. You can use both members if the deployment is a replica set.
+- `SOURCE_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **from**. eg. `mongodb://username:strongpassword@candidate.33.mongolayer.com:30000,candidate.34.mongolayer.com:30000/local?authSource=prod_db` You will need to [create a user](https://github.com/kylemclaren/mongo-transporter/wiki/Creating-a-MongoDB-oplog-user) that can read from the `local.oplog.rs` namespace. You can use both members of the replica set.
 - `SOURCE_DB` - The DB name to sync from. eg. `prod_db`
-- `SINK_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **to**. eg. `mongodb://username:strongpassword@candidate.43.mongolayer.com:30000,candidate.44.mongolayer.com:30000/staging_db` The user does not need to authenticate to the `local` DB but needs read write access to `SINK_DB`. You can use both members if the deployment is a replica set.
+- `SINK_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **to**. eg. `mongodb://username:strongpassword@candidate.43.mongolayer.com:30000,candidate.44.mongolayer.com:30000/staging_db` The user does not need to authenticate to the `local` DB but needs read write access to `SINK_DB`. You can use both members of the replica set.
 - `SINK_DB` - The DB name to sync from. eg. `staging_db`
 - `TAIL` - Specify true to run a continuous sync, tailing the oplog. False for a one-time sync.
 - `DEBUG` - Specify true for verbose logging to stdout.
