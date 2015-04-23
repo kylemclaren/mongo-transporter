@@ -35,7 +35,7 @@
     },
     "DEBUG": {
       "description": "Specify true to enable verbose logging to stdout for debugging purposes.",
-      "value": "false"
+      "value": "true"
     }
   }
 }
