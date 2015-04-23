@@ -32,6 +32,8 @@ Click the deploy button to launch a new app instance, add your config/environmen
 
 For now, Mongo Transporter will only sync a single DB on a deployment so if a deployment has multiple DB's, you will have to run multiple app instances. To run a "continuous sync", you will need to use this with a MongoDB replica set, this is because a replica set includes the `oplog.rs` collection on the `local` DB. Transporter "tails" this collection to keep the two deployments in sync.
 
+Note: Go on Heroku is not yet officially supported so use at your own risk.
+
 ## Config vars
 
 - `SOURCE_MONGO_URL` - This is the full connection URI of the MongoDB deployment that you want to sync **from**. eg. `mongodb://username:strongpassword@candidate.33.mongolayer.com:30000,candidate.34.mongolayer.com:30000/local?authSource=prod_db` You will need to [create a user](https://github.com/kylemclaren/mongo-transporter/wiki/Creating-a-MongoDB-oplog-user) that can read from the `local.oplog.rs` namespace. You can use both members of the replica set.
