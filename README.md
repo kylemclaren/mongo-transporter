@@ -69,7 +69,7 @@ This app uses the [Go Buildpack for Heroku](https://github.com/kr/heroku-buildpa
 
 ## To Do
 
-- [ ] 2.4/2.6 caveats (if any)
+- [ ] 2.4/2.6/3.0 caveats (if any)
 - [ ] Comma separated list of collections to ignore
 - [ ] Improve log output
 - [ ] Slack notifications
