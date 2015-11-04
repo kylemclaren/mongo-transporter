@@ -11,10 +11,6 @@
   "repository": "https://github.com/kylmclaren/mongo-transporter",
   "logo": "https://raw.githubusercontent.com/kylemclaren/mongo-transporter/master/logo.png",
   "env": {
-    "BUILDPACK_URL": {
-      "description": "Do not modify this value.",
-      "value": "https://github.com/kr/heroku-buildpack-go"
-    },
     "SOURCE_MONGO_URL": {
       "description": "The full connection string of the MongoDB deployment you want to sync from.",
       "value": "mongodb://"
