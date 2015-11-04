@@ -25,7 +25,7 @@ build:
         code: |
           godep restore
           
-    -script:
+    - script:
         name: godep build
         code: |
           godep build ./cmd/...
