@@ -26,7 +26,7 @@ To prevent this behavior, you can do the following:
 package underscore
 
 import (
-	"github.com/robertkrimen/otto/registry"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/robertkrimen/otto/registry"
 )
 
 var entry *registry.Entry = registry.Register(func() string {

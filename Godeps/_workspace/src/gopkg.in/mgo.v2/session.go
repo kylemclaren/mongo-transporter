@@ -41,7 +41,7 @@ import (
 	"sync"
 	"time"
 
-	"gopkg.in/mgo.v2/bson"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/gopkg.in/mgo.v2/bson"
 )
 
 type mode int
@@ -122,7 +122,7 @@ type Iter struct {
 
 var (
 	ErrNotFound = errors.New("not found")
-	ErrCursor = errors.New("invalid cursor")
+	ErrCursor   = errors.New("invalid cursor")
 )
 
 const defaultPrefetch = 0.25

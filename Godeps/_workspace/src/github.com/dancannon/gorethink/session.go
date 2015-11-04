@@ -5,9 +5,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"gopkg.in/fatih/pool.v2"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/gopkg.in/fatih/pool.v2"
 
-	p "github.com/dancannon/gorethink/ql2"
+	p "github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/dancannon/gorethink/ql2"
 )
 
 type Query struct {

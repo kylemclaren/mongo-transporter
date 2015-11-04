@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/dancannon/gorethink/types"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/dancannon/gorethink/types"
 )
 
 var (

@@ -9,8 +9,8 @@ package pipe
 import (
 	"time"
 
-	"github.com/compose/transporter/pkg/events"
-	"github.com/compose/transporter/pkg/message"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/compose/transporter/pkg/events"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/compose/transporter/pkg/message"
 )
 
 type messageChan chan *message.Msg

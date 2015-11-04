@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"sync"
 
-	"github.com/robertkrimen/otto/ast"
-	"github.com/robertkrimen/otto/parser"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/robertkrimen/otto/ast"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/robertkrimen/otto/parser"
 )
 
 type _global struct {

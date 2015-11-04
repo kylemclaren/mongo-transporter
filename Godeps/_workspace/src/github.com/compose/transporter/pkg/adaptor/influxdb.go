@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"net/url"
 
-	"github.com/compose/transporter/pkg/message"
-	"github.com/compose/transporter/pkg/pipe"
-	"github.com/influxdb/influxdb/client"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/compose/transporter/pkg/message"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/compose/transporter/pkg/pipe"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/influxdb/influxdb/client"
 )
 
 // Influxdb is an adaptor that writes metrics to influxdb (http://influxdb.com/)

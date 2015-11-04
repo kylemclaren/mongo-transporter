@@ -3,9 +3,9 @@ package parser
 import (
 	"regexp"
 
-	"github.com/robertkrimen/otto/ast"
-	"github.com/robertkrimen/otto/file"
-	"github.com/robertkrimen/otto/token"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/robertkrimen/otto/ast"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/robertkrimen/otto/file"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/robertkrimen/otto/token"
 )
 
 func (self *_parser) parseIdentifier() *ast.Identifier {

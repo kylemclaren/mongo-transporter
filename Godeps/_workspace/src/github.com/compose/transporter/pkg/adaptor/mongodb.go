@@ -5,10 +5,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/compose/transporter/pkg/message"
-	"github.com/compose/transporter/pkg/pipe"
-	"gopkg.in/mgo.v2"
-	"gopkg.in/mgo.v2/bson"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/compose/transporter/pkg/message"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/compose/transporter/pkg/pipe"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/gopkg.in/mgo.v2"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/gopkg.in/mgo.v2/bson"
 )
 
 // Mongodb is an adaptor to read / write to mongodb.

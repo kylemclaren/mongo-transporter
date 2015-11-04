@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 
-	p "github.com/dancannon/gorethink/ql2"
+	p "github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/dancannon/gorethink/ql2"
 )
 
 func printCarrots(t Term, frames []*p.Frame) string {

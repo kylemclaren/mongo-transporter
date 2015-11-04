@@ -15,7 +15,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	. "github.com/araddon/gou"
+	. "github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/araddon/gou"
 )
 
 var (

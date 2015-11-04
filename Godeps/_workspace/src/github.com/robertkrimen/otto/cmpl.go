@@ -1,8 +1,8 @@
 package otto
 
 import (
-	"github.com/robertkrimen/otto/ast"
-	"github.com/robertkrimen/otto/file"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/robertkrimen/otto/ast"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/robertkrimen/otto/file"
 )
 
 type _file struct {

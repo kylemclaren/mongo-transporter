@@ -12,8 +12,8 @@ import (
 	"sync"
 	"text/tabwriter"
 
-	"github.com/robertkrimen/otto"
-	"github.com/robertkrimen/otto/parser"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/robertkrimen/otto"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/robertkrimen/otto/parser"
 )
 
 var flag_test *bool = flag.Bool("test", false, "")

@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"sync"
 
-	"github.com/dancannon/gorethink/encoding"
-	p "github.com/dancannon/gorethink/ql2"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/dancannon/gorethink/encoding"
+	p "github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/dancannon/gorethink/ql2"
 )
 
 // Cursors are used to represent data returned from the database.

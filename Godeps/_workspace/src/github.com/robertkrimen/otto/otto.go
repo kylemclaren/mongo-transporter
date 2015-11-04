@@ -227,7 +227,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/robertkrimen/otto/registry"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/robertkrimen/otto/registry"
 )
 
 // Otto is the representation of the JavaScript runtime. Each instance of Otto has a self-contained namespace.

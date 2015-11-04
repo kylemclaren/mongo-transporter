@@ -3,7 +3,7 @@ package gorethink
 import (
 	"reflect"
 
-	"github.com/dancannon/gorethink/encoding"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/dancannon/gorethink/encoding"
 )
 
 func init() {

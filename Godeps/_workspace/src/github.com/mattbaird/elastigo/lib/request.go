@@ -15,7 +15,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	hostpool "github.com/bitly/go-hostpool"
+	hostpool "github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/bitly/go-hostpool"
 	"io"
 	"io/ioutil"
 	"net/http"

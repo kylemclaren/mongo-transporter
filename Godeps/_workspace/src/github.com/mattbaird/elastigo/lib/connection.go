@@ -13,7 +13,7 @@ package elastigo
 
 import (
 	"fmt"
-	hostpool "github.com/bitly/go-hostpool"
+	hostpool "github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/bitly/go-hostpool"
 	"net/http"
 	"runtime"
 	"strings"
@@ -61,7 +61,7 @@ func NewConn() *Conn {
 }
 
 func (c *Conn) SetPort(port string) {
-    c.Port = port
+	c.Port = port
 }
 
 func (c *Conn) SetHosts(newhosts []string) {

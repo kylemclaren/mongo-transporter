@@ -14,7 +14,7 @@ package elastigo
 import (
 	"encoding/json"
 	"fmt"
-	u "github.com/araddon/gou"
+	u "github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/araddon/gou"
 	"strconv"
 	"strings"
 )

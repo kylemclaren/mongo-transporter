@@ -3,7 +3,7 @@
 package parser
 
 import (
-	Dbg "github.com/robertkrimen/otto/dbg"
+	Dbg "github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/robertkrimen/otto/dbg"
 )
 
 var dbg, dbgf = Dbg.New()

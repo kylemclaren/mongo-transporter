@@ -5,9 +5,9 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/compose/transporter/pkg/message"
-	"github.com/compose/transporter/pkg/pipe"
-	elastigo "github.com/mattbaird/elastigo/lib"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/compose/transporter/pkg/message"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/compose/transporter/pkg/pipe"
+	elastigo "github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/mattbaird/elastigo/lib"
 )
 
 // Elasticsearch is an adaptor to connect a pipeline to

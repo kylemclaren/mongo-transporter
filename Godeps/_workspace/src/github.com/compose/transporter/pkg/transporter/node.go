@@ -10,8 +10,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/compose/transporter/pkg/adaptor"
-	"github.com/compose/transporter/pkg/pipe"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/compose/transporter/pkg/adaptor"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/compose/transporter/pkg/pipe"
 )
 
 // A Node is the basic building blocks of transporter pipelines.

@@ -1,6 +1,9 @@
 {
-	"ImportPath": "mongo-transporter/transporter",
-	"GoVersion": "go1.5",
+	"ImportPath": "github.com/kylemclaren/mongo-transporter",
+	"GoVersion": "go1.5.1",
+	"Packages": [
+		"./..."
+	],
 	"Deps": [
 		{
 			"ImportPath": "code.google.com/p/goprotobuf/proto",
@@ -69,6 +72,7 @@
 		},
 		{
 			"ImportPath": "gopkg.in/mgo.v2",
+			"Comment": "r2014.10.12-6-ge2e9148",
 			"Rev": "e2e914857713db7497cca2bd7fc0b030fc9cb22d"
 		}
 	]

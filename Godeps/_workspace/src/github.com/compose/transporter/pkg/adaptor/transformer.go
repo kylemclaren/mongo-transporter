@@ -5,11 +5,11 @@ import (
 	"io/ioutil"
 	"time"
 
-	"github.com/compose/mejson"
-	"github.com/compose/transporter/pkg/message"
-	"github.com/compose/transporter/pkg/pipe"
-	"github.com/robertkrimen/otto"
-	_ "github.com/robertkrimen/otto/underscore" // enable underscore
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/compose/mejson"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/compose/transporter/pkg/message"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/compose/transporter/pkg/pipe"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/robertkrimen/otto"
+	_ "github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/robertkrimen/otto/underscore" // enable underscore
 )
 
 // Transformer is an adaptor which consumes data from a source, transforms it using a supplied javascript

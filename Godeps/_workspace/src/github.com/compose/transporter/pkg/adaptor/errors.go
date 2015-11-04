@@ -3,7 +3,7 @@ package adaptor
 import (
 	"fmt"
 
-	"gopkg.in/mgo.v2/bson"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/gopkg.in/mgo.v2/bson"
 )
 
 // Adaptor errors have levels to indicate their severity.

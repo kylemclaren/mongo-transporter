@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/compose/transporter/pkg/message"
-	"github.com/compose/transporter/pkg/pipe"
-	gorethink "github.com/dancannon/gorethink"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/compose/transporter/pkg/message"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/compose/transporter/pkg/pipe"
+	gorethink "github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/dancannon/gorethink"
 )
 
 // Rethinkdb is an adaptor that writes metrics to rethinkdb (http://rethinkdb.com/)

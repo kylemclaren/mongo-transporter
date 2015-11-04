@@ -10,10 +10,10 @@ import (
 	"strings"
 	"time"
 
-	"gopkg.in/mgo.v2"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/gopkg.in/mgo.v2"
 
-	"github.com/compose/transporter/pkg/events"
-	"github.com/compose/transporter/pkg/transporter"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/compose/transporter/pkg/events"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/compose/transporter/pkg/transporter"
 )
 
 var (

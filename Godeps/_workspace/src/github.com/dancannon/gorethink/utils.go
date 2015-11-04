@@ -6,10 +6,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/dancannon/gorethink/encoding"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/dancannon/gorethink/encoding"
 
-	"code.google.com/p/goprotobuf/proto"
-	p "github.com/dancannon/gorethink/ql2"
+	"github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/code.google.com/p/goprotobuf/proto"
+	p "github.com/kylemclaren/mongo-transporter/Godeps/_workspace/src/github.com/dancannon/gorethink/ql2"
 )
 
 // Helper functions for constructing terms
