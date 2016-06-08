@@ -1,5 +1,7 @@
 <!-- ![Mongo Transporter](mongo_transporter.png) -->
 
+# This project is heavily outdated. I plan to get it working again at some point but for now it probably won't work...
+
 # Mongo Transporter
 
 [![wercker status](https://app.wercker.com/status/3eda307e1ccd93047fb764846c90bc9b/m/master "wercker status")](https://app.wercker.com/project/bykey/3eda307e1ccd93047fb764846c90bc9b)
