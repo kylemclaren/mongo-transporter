@@ -4,8 +4,6 @@
 
 # Mongo Transporter
 
-[![wercker status](https://app.wercker.com/status/3eda307e1ccd93047fb764846c90bc9b/m/master "wercker status")](https://app.wercker.com/project/bykey/3eda307e1ccd93047fb764846c90bc9b)
-
 A simple Go app that uses the [Compose Transporter](https://github.com/compose/transporter) to transfer data between two MongoDB deployments and keep them in sync.
 
 ## What's it good for?
